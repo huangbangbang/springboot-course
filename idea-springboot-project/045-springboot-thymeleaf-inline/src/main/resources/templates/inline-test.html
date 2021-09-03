@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body th:inline="text">
+<div th:text="${data}"></div>
+<div th:inline="text">
+    [[${data}]]
+</div>
+
+[[${data}]]
+<br>
+<script type="text/javascript" th:inline="javascript">
+    function showData() {
+        alert([[${data}]]);
+        //alert(${data});
+        alert("====");
+    }
+</script>
+
+<button th:onclick="showData()">submit</button>
+</body>
+</html>

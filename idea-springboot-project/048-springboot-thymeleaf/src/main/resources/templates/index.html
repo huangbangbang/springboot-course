@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span th:text="${#session.getAttribute('data')}"></span><br>
+<span th:text="${#httpSession.getAttribute('data')}"></span><br>
+<span th:text="${session.data}"></span><br>
+
+<script type="text/javascript" th:inline="javascript">
+    var scheme = [[${#request.getScheme()}]];
+
+    var serverName = [[${#request.getServerName()}]];
+
+    var serverPort = [[${#request.getServerPort()}]];
+    var contextPath = [[${#request.getContextPath()}]];
+
+
+    var allPath =scheme+"://"+serverName+":"+serverPort+contextPath;
+
+    var requestURL=[[${#httpServletRequest.requestURL}]]
+    var queryString=[[${#httpServletRequest.queryString}]]
+    var requestAddress=requestURL+"?"+queryString;
+    alert(requestAddress);
+</script>
+</body>
+</html>

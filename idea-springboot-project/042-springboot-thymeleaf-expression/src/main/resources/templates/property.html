@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form action="http://localhost:8080/test1" method="get">
+      用户编号:<input type="text" name="id" /><br>
+      用户姓名:<input type="text" name="name" /><br>
+      用户年龄:<input type="text" name="age" /><br>
+      <input type="submit" value="submit" /><br>
+  </form>
+  <form th:action="@{/test1}" method="get">
+      用户编号:<input type="text" th:name="id" /><br>
+      用户姓名:<input type="text" th:name="name" /><br>
+      用户年龄:<input type="text" name="age" /><br>
+      <input type="submit" value="submit" /><br>
+  </form>
+<script type="text/javascript">
+    function test() {
+           alert("-----------------");
+    }
+</script>
+<button th:onclick="test()">submit</button>
+</body>
+</html>

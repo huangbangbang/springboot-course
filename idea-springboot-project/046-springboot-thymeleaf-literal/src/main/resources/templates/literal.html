@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{'/user/detail?sex='+${sex}}">sex</a><br>
+<span th:text='hello'></span><br>
+<span th:text="2020">1999</span><br>
+<span th:text="2020+20">1999</span><br>
+<div th:if="${flag}">
+    hhh
+</div><br>
+<div th:if="${!flag}">
+    bbb
+</div><br>
+
+
+<span th:text="${user.id}"></span>
+<!--<span th:text="${user1.id}"></span>-->
+
+<div th:if="${user1.id eq null}">
+    null
+</div>
+
+<div th:if="${user1 eq null}">
+    null
+</div>
+
+</body>
+</html>
